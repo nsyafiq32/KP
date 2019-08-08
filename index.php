@@ -1,8 +1,7 @@
 <?php
-	include "koneksi.php";
-	session_start();
-	if (!isset($_SESSION['email'])){
-		header ("location:loginForm.php");
+	if(isset($_GET['pesan'])){
+		if($_GET['pesan']=="gagal"){
+			echo"<div class='alert'>Email atau Password Tidak Sesuai </div>";
+		}
 	}
 ?>
-Berhasil Login, <a href="logout.php">Logout</a>

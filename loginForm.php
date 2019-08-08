@@ -20,8 +20,10 @@
     <img class="images" src="images/tugumuda.jpg" alt="images">
     <label for="email">Email</label>
     <input type="text" class="sign-in-input" id="email"><br>
+
     <label for="password">Password</label>
     <input type="password" class="sign-in-input" id="password"><br>
+
     <a href="reset-password">Forget Your Password</a><br><br>
     <input type="submit" value="login" class="sign-in-button">
     <input type="submit" value="Sign Up" class="sign-up-button" a href="signupForm.php">
