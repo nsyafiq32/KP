@@ -31,8 +31,22 @@
     <input type="password" class="sign-in-input" id="password"><br>
 
     <a href="reset-password">Forget Your Password</a><br><br>
-    <input type="submit" name="login" value="login" class="sign-in-button">
-    <input type="submit" value="Sign Up" class="sign-up-button" a href="signupForm.php">
+    <input type="submit" name="login" class="sign-in-button" value="login">
+    <!-- <input type="submit" a href="signupForm.php" class="sign-up-button" value="sign up"> -->
+    <a href="signupForm.php" class="btn-sign">Sign Up</a> 
   </form>
 </body>
+
+<script type="text/javascript">
+  function validasi(){
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    if(email != "" && password != ""){
+      return true;
+    }else{
+      alert('Email dan Password harus diisi');
+      return false;
+    }
+  }
+</script>
 </html>

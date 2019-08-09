@@ -5,7 +5,7 @@
 	include "koneksi.php";
 
 	$email = $_POST['email'];
-	$password = $_POST['password'];
+	$password = md5($_POST['password']);
 
 	$login = mysqli_query($koneksi, "select * from user where email='$email' and password='$password'");
 
@@ -18,17 +18,17 @@
 			$_SESSION['email']=$email;
 			$_SESSION['as']="Develeoper";
 
-			header("location:");
+			header("location:signupForm.php");
 		}else if($data['as']=="Tester"){
 			$_SESSION['email']=$email;
 			$_SESSION['as']="Tester";
 
-			header("location:");
+			header("location:signupForm.php");
 		}else if($data['as']=="PM"){
 			$_SESSION['email']=$email;
 			$_SESSION['as']="PM";
 
-			header("location:");
+			header("location:signupForm.php");
 		}else{
 			header("location:index.php?pesan=gagal");
 		}

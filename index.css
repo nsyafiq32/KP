@@ -213,10 +213,9 @@ blockquote, q {
   .sign-in-button {
     position: relative;
     vertical-align: top;
-    width: 35%;
+    width: 100%;
     height: 54px;
     padding: 0;
-    margin: 0px 0px 0px 20px;
     font-size: 22px;
     color: white;
     text-align: center;
@@ -257,14 +256,15 @@ blockquote, q {
   .lt-ie9 .sign-up-input {
     line-height: 48px;
   }
-
+  .btn-sign{
+    margin: 0 0 0 120px;
+  }
   .sign-up-button {
     position: relative;
     vertical-align: top;
-    width: 35%;
+    width: 100%;
     height: 54px;
     padding: 0;
-    margin: 0px 0px 0px 30px;
     font-size: 22px;
     color: white;
     text-align: center;
