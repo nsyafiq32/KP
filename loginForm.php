@@ -2,7 +2,13 @@
   include "koneksi.php";
   session_start();
   if (isset($_SESSION['email'])){
-    header ("location:index.php");
+    if(isset($_POST['login'])){
+      $email = htmlspecialchars($_POST["email"]);
+      $password = htmlspecialchars($_POST["password"]);
+      $as = htmlspecialchars($_POST["as"]);
+
+      header ("location:index.php");
+    }
   }
 ?>
 
@@ -25,7 +31,7 @@
     <input type="password" class="sign-in-input" id="password"><br>
 
     <a href="reset-password">Forget Your Password</a><br><br>
-    <input type="submit" value="login" class="sign-in-button">
+    <input type="submit" name="login" value="login" class="sign-in-button">
     <input type="submit" value="Sign Up" class="sign-up-button" a href="signupForm.php">
   </form>
 </body>
