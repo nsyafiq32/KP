@@ -41,20 +41,6 @@
     <img class="images" src="images/tugumuda.jpg" alt="images">
     <h1 class="sign-up-title">Sign Up</h1>
     <!-- <input type="hidden" name="id"> -->
-    <?php
-      // if(isset($_POST['sign_up'])){
-      //   $password = $_POST['password'];
-      //   if (strlen($password) <= 12){
-      //     echo "<script>alert('Password harus antara 6-12 huruf')</script>";
-      //     echo "<meta http-equiv='refresh' content='1 url=signupForm.php'>";
-      //   }else if(){
-
-      //   }else{
-      //   echo "<meta http-equiv='refresh' content='1 url=signup_process.php'>";
-      //   }
-
-      // }
-    ?>
     <label for="username">Username</label>
     <input type="text" name="username" class="sign-up-input"><br>
 

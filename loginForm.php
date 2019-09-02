@@ -1,15 +1,4 @@
 <?php
-  // include "koneksi.php";
-  // session_start();
-  // if (isset($_SESSION['email'])){
-  //   if(isset($_POST['login'])){
-  //     $email = htmlspecialchars($_POST["email"]);
-  //     $password = htmlspecialchars($_POST["password"]);
-  //     $as = htmlspecialchars($_POST["as"]);
-
-  //     header ("location:index.php");
-  //   }
-  // }
 
 	if(isset($_GET['pesan'])){
 		if($_GET['pesan']=="gagal"){
@@ -44,17 +33,4 @@
     <a href="signupForm.php" class="btn-sign">Sign Up</a> 
   </form>
 </body>
-
-<!-- <script type="text/javascript">
-  function validasi(){
-    var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
-    if(email != "" && password != ""){
-      return true;
-    }else{
-      alert('Email dan Password harus diisi');
-      return false;
-    }
-  }
-</script> -->
 </html>

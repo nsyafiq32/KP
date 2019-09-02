@@ -1,7 +1,7 @@
 <?php
     session_start();
-    
     include "koneksi.php";
+    
     if(isset($_POST['reset'])){
         $username = $_POST['username'];
         $cek = mysqli_query($koneksi,"SELECT username from user WHERE username='$username'");

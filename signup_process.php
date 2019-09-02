@@ -11,8 +11,6 @@
         $num_row = mysqli_num_rows($sql_get);
 
         if(isset($_POST['sign_up'])){
-            // $password = md5($_POST['password']);
-            // $password = $_POST['password'];
             if (empty($username)){
                 header("location:signupForm.php?pesan=username_belum");
             }else if(empty($password)){
@@ -29,13 +27,4 @@
             }
         }
     }
-    // $id = $_POST['id'];
-    // $email = $_POST['email'];
-    // $password = $_POST['password'];
-    // $pilih = $_POST['pilih'];
-
-    // $sql = "INSERT INTO user VALUES ('$email', '$password', '$pilih')";
-   
-
-    //mysqli_close($koneksi);
 ?>
