@@ -12,6 +12,19 @@
 
   //   return mysqli_affected_rows($conn);
   // }
+  if(isset($_GET['pesan'])){
+    if($_GET['pesan']=="sudah_ada"){
+      echo "<div class='alert'>Username Sudah Terdaftar</div>";
+    }elseif($_GET['pesan']=='username_belum'){
+      echo "<div class='alert'>Username Belum Diisi</div>";
+    }elseif($_GET['pesan']=='pass_belum'){
+      echo "<div class='alert'>Password Belum Diisi</div>";
+    }elseif($_GET['pesan']=='pass_kurang'){
+      echo "<div class='alert'>Password Harus Lebih Dari 4 Digit</div>";
+    }elseif($_GET['pesan']=='sebagai_belum'){
+      echo "<div class='alert'>Sebagai Belum Diisi</div>";
+    }
+  }
 ?>
 
 <!DOCTYPE html>
@@ -20,11 +33,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="./css/index.css">
   <title>Sign Up</title>
 </head>
 <body>
-<form class="sign-in" action="" method="POST">
+<form class="sign-in" action="signup_process.php" method="POST">
     <img class="images" src="images/tugumuda.jpg" alt="images">
     <h1 class="sign-up-title">Sign Up</h1>
     <!-- <input type="hidden" name="id"> -->
@@ -42,11 +55,11 @@
 
       // }
     ?>
-    <label for="email">Email</label>
-    <input type="text" name="email" class="sign-up-input" id="email"><br>
+    <label for="username">Username</label>
+    <input type="text" name="username" class="sign-up-input"><br>
 
     <label for="password">Password</label>
-    <input type="password" name="password" class="sign-up-input" id="password">
+    <input type="password" name="password" class="sign-up-input">
     <br>
 
     <label for="as">Sign Up As</label>
@@ -58,6 +71,7 @@
     </select><br>
 
     <input type="submit" name="sign_up" value="Sign Up" class="sign-up-button">
+    <a class="btn-sign" href="loginForm.php">Kembali</a>
   </form>
 </body>
 </html>

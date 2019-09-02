@@ -1,56 +1,54 @@
 <?php
-
-	session_start();
 	
+	session_start();
+
 	include "koneksi.php";
 
-	$email = $_POST['email'];
-	$password = md5($_POST['password']);
+	$username = $_POST['username'];
+	// $password = md5($_POST['Password']);
+	$password = $_POST['password'];
 
-	$login = mysqli_query($koneksi, "select * from user where email='$email' and password='$password'");
-
+	$login = mysqli_query($koneksi, "SELECT * FROM user WHERE username='$username' AND password=md5('$password')");
 	$cek = mysqli_num_rows($login);
 
 	if($cek > 0){
 		$data = mysqli_fetch_assoc($login);
 
-		if($data['as']=="Developer"){
-			$_SESSION['email']=$email;
-			$_SESSION['as']="Develeoper";
+		if($data['pilih']=="Developer"){
+			$_SESSION['username']=$username;
+			$_SESSION['pilih']="Develeoper";
 
-			header("location:signupForm.php");
-		}else if($data['as']=="Tester"){
-			$_SESSION['email']=$email;
-			$_SESSION['as']="Tester";
+			header("location:./developer/developer.php");
+		}else if($data['pilih']=="Tester"){
+			$_SESSION['username']=$username;
+			$_SESSION['pilih']="Tester";
 
-			header("location:signupForm.php");
-		}else if($data['as']=="PM"){
-			$_SESSION['email']=$email;
-			$_SESSION['as']="PM";
+			header("location:tester.php");
+		}else if($data['pilih']=="PM"){
+			$_SESSION['username']=$username;
+			$_SESSION['pilih']="PM";
 
-			header("location:signupForm.php");
+			header("location:index.php");
 		}else{
-			header("location:index.php?pesan=gagal");
+			header("location:loginForm.php?pesan=gagal");
 		}
 	}else{
-		header("location:index.php?pesan=gagal");
+		header("location:loginForm.php?pesan=gagal");
 	}
 
-	// if (empty($email)){
-	// 	echo "<script>alert('Email belum diisi')</script>";
-	// 	echo "<meta http-equiv='refresh' content='1 url=loginForm.php'>";
-	// }else if (empty($password)){
-	// 	echo "<script>alert('Password belum diisi')</script>";
-	// 	echo "<meta http-equiv='refresh' content='1 url=loginForm.php'>";
-	// }else{
-	// 	session_start();
-	// 	$login = mysqli_query("select * from user where email='$email' and password='$password'");
-	// 	if (mysqli_num_rows($login) > 0){
-	// 		$_SESSION['email'] = $email;
-	// 		header("location:index.php");
+	// if (isset($_POST['login'])) {
+	// 	$e = $_POST['email'];
+	// 	$p = $_POST['password'];
+	// 	$data = mysqli_connect($koneksi, "SELECT * FROM user WHERE email = '$email' AND password = '$password'");
+	// 	$cek = mysqli_fetch_assoc($data);
+	// 	$email = $cek['email'];
+	// 	$password = $cek['password'];
+	// 	$pilih = $cek['pilih'];
+	// 	if ($e == $email && $p == $password) {
+	// 		$_SESSION['pilih'] = $pilih;
+	// 		header('location:signupForm.php');
 	// 	}else{
-	// 		echo "<script>alert('Email atau Password salah')</script>";
-	// 		echo "<meta http-equiv='refresh' content='1 url=loginForm.php'>";
+	// 		echo "location:loginForm.php?pesan=gagal";
 	// 	}
 	// }
 ?>
